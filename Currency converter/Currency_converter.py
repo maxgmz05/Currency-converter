@@ -1,11 +1,11 @@
 import requests
 
-def currency_converter(a,b,x):
+def currency_converter(a,b,x): #a function that takes a from currency as 'a', a to currency as 'b', and the amount to be converted as 'x' and returns the converted value
     url = f"https://api.apilayer.com/fixer/convert?to={b}&from={a}&amount={x}"
 
     payload = {}
     headers= {
-    "apikey": "AZzo1VzjOz9TqTRj1L3i5UBlzg1iRhkJ"
+    "apikey": "AZzo1VzjOz9TqTRj1L3i5UBlzg1iRhkJ" #for conversion I used fixer api, I started a new subscription and used my api key
     }
     
     response = requests.request("GET", url, headers=headers, data = payload)
@@ -20,7 +20,7 @@ def currency_converter(a,b,x):
     
     return(result)
 
-def currency_rate(a,b):
+def currency_rate(a,b): #a function that takes a from currency as 'a', a to currency as 'b' and returns the rate 
     url = f"https://api.apilayer.com/fixer/convert?to={b}&from={a}&amount=1"
 
     payload = {}
